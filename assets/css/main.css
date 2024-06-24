@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+body {
+  @apply font-Josefin;
+}
+
+@layer components {
+  .ne-btn {
+    @apply px-[20px]
+     py-[10px]
+     shadow-md
+     transition-[width]
+     ease-linear
+     rounded-base
+     duration-200;
+  }
+
+  .ne-btn:active {
+    @apply outline outline-[3px] outline-offset-[3px] outline-white;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-gradientColorFrom to-gradientColorTo
+         text-white
+         relative
+         z-10
+         overflow-hidden
+         before:absolute 
+         before:w-[0%] 
+         before:h-[100%] 
+         before:top-0 
+         before:left-0
+       before:bg-white
+         before:rounded-full
+         before:z-[-1] 
+         before:transition-all before:ease-linear before:duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply before:w-[100%];
+  }
+
+  .btn-primary:hover span {
+    @apply text-black;
+  }
+
+  .btn-secondary {
+    @apply bg-white  text-gray-800;
+  }
+
+  .btn-secondary,
+  .btn-outline {
+    @apply relative
+    z-10
+     overflow-hidden
+     before:absolute
+     before:w-[0%]
+     before:h-[100%]
+     before:top-0
+     before:left-0
+     before:bg-gradient-to-r
+     before:from-gradientColorFrom
+     before:to-gradientColorTo
+     before:rounded-full
+     before:z-[-1]
+     before:transition-all
+     before:ease-linear
+     before:duration-200;
+  }
+
+  .btn-secondary,.btn-outline:hover {
+    @apply before:w-[100%];
+  }
+
+  .btn-secondary,.btn-outline:hover span {
+    @apply text-white;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gradientColorFrom text-gradientColorFrom;
+  }
+
+  .ne-nav-divider {
+    @apply before:absolute 
+      before:w-[30%] 
+      before:h-[5px] 
+      before:bottom-[-7px]
+      before:left-0
+      scale-x-0 
+      before:bg-gradient-to-r 
+      before:from-gradientColorFrom
+      before:to-gradientColorTo
+      before:rounded-[5px]  
+      ease-linear
+      origin-left
+      duration-200
+      after:absolute 
+      after:w-[65%] 
+      after:h-[5px] 
+      after:bottom-[-7px] 
+      after:left-[40%] 
+      after:bg-gradient-to-r 
+      after:from-gradientColorFrom 
+      after:to-gradientColorTo 
+      after:rounded-[5px]
+      group-hover:scale-x-100
+      transition-all;
+  }
+}

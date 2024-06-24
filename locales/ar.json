@@ -1,0 +1,25 @@
+{
+     "header": {
+          "home": "الرئيسية",
+          "about": "من نحن",
+          "services": "خدماتنا",
+          "company": "الشركة",
+          "team": "الفريق",
+          "careers":  "الوظائف",
+          "faq": "أسئلة واستفسارات",
+          "portfolio": "أعمالنا",
+          "contact": "تواصل",
+          "contact_us": "تواصل معنا",
+          "login_now": "سجل الدخول ",
+          "switch_theme": "التبديل إلى الوضع {theme}",
+          "light": "المضيئ",
+          "dark": "المظلم"
+     },
+     "back": "عودة",
+     "page_not_found": "نأسف، الصفحة غير موجودة",
+     "about": "نبذة عنا",
+     "nexus_technology": "نيكسوس تكنولوجي",
+     "switch_lang": "تغيير اللغة",
+     "faqs": "الأسئلة الشائعة",
+     "media_center": "المركز الإعلامي"
+}

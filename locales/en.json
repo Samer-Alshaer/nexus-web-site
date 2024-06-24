@@ -1,0 +1,25 @@
+{
+     "header": {
+          "home": "Home",
+          "about": "About",
+          "services": "Services",  
+          "company": "Company",
+          "careers": "Careers",
+          "faq": "FAQ",
+          "media_center": "Media Center",
+          "portfolio": "Portfolio",
+          "contact": "Contact",
+          "contact_us": "Contact Us",
+          "login_now": "Login Now",
+          "switch_theme": "Switch to {theme} mode",
+          "light": "light",
+          "dark": "dark",
+          "back": "Back"
+     },
+     "page_not_found": "Sorry, Page Not Found",
+     "about": "About Us",
+     "nexus_technology":  "Nexus Technology",
+     "switch_lang": "Switch Lang",
+     "faqs": "FAQs",
+     "media_center": "Media Center"
+}
