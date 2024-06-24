@@ -7,11 +7,11 @@
             class="lazyload-container lazyload"
             style="background-image: url(./uploads/placeholder.webp)"
           ></div>
-          <img
+          <!-- <img
             class="w-full max-h-[485px] h-full rounded-t-base border-borderColor object-cover lazyload"
             src="/media/images/branches.png"
             alt=""
-          />
+          /> -->
         </div>
         <div
           class="flex flex-col gap-3 border rounded-b-base border-borderColor p-4 xs:p-6"
