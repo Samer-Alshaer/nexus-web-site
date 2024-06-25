@@ -88,34 +88,34 @@
                 />
               </svg>
               <div
-                class="flex bg-white px-6 py-5 rounded-full shadow-md min-w-[350px] lg:min-w-[420px] invisible xs:visible mx-auto gap-3 flex-nowrap absolute bottom-0 left-2/4 transform -translate-x-2/4 lg:justify-between"
+                class="flex bg-white px-6 py-5 rounded-full shadow-md min-w-[250px] xs:min-w-[350px] lg:min-w-[420px] mx-auto gap-3 flex-nowrap absolute bottom-0 left-2/4 transform -translate-x-2/4 lg:justify-between"
               >
                 <div class="flex items-center">
                   <nuxt-img
                     src="/media/images/users/user3.jpg"
                     alt="user3"
                     title="user3"
-                    class="w-[55px] rounded-full border-2 border-[#ededed]"
+                    class="w-[40px] xs:w-[55px] rounded-full border-2 border-[#ededed]"
                     loading="lazy"
                   />
                   <nuxt-img
                     src="/media/images/users/user2.jpg"
                     alt="user2"
                     title="user2"
-                    class="w-[55px] rounded-full border-2 border-[#ededed] ml-[-25px] rtl:mr-[-25px] rtl:ml-0"
+                    class="w-[40px] xs:w-[55px] rounded-full border-2 border-[#ededed] ml-[-20px] xs:ml-[-25px] rtl:mr-[-20px] xs:rtl:mr-[-25px] rtl:ml-0"
                     loading="lazy"
                   />
                   <nuxt-img
                     src="/media/images/users/user1.jpg"
                     alt="user1"
                     title="user1"
-                    class="w-[55px] rounded-full border-2 border-[#ededed] ml-[-25px] rtl:mr-[-25px] rtl:ml-0"
+                    class="w-[40px] xs:w-[55px] rounded-full border-2 border-[#ededed] ml-[-20px] xs:ml-[-25px] rtl:mr-[-20px] xs:rtl:mr-[-25px] rtl:ml-0"
                     loading="lazy"
                   />
                 </div>
                 <div class="flex flex-col">
                   <h5
-                    class="text-[15px] text-gray-800 font-bold mb-1 border-b pb-1"
+                    class="text-[10px] xs:text-[15px] text-gray-800 font-bold mb-1 border-b pb-1"
                   >
                     Happy Clients & Rating
                   </h5>
@@ -124,7 +124,8 @@
                       name="solar:stars-minimalistic-bold"
                       class="w-5 h-5 text-[#fdc703]"
                     />
-                    <span class="text-[15px] font-bold text-gray-800 mt-1"
+                    <span
+                      class="text-[10px] xs:text-[15px] font-bold text-gray-800 mt-1"
                       >4.8 ( 8,090 )</span
                     >
                   </div>
