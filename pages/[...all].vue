@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container pt-[150px]">
     <div
       class="bg-white dark:bg-color3 rounded-base p-5 mx-auto max-w-[600px] min-h-[400px] border border-borderColor flex flex-col items-center justify-center gap-5"
     >

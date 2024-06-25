@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-aos",
   ],
-  plugins: [],
+  plugins: [{ src: "~/plugins/jquery", mode: "client" },],
   runtimeConfig: {
     public: {
       SITE_NAME: process.env.SITE_NAME,

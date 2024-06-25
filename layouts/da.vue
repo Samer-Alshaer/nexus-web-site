@@ -10,11 +10,18 @@
         `${promoPosition}-0`,
       ]"
     /> -->
-    <Header :promoPosition="promoPosition" />
-    <main
-      class="flex-1 bg-white"
-     
-    >
+    <Header
+      :promoPosition="promoPosition"
+      class="translate-y-0 absolute"
+      :class="{ 'bg-darkColor': router.currentRoute.value.path !== '/' }"
+    />
+    <Header
+      :promoPosition="promoPosition"
+      fixedHeader
+      class="translate-y-[-110%] bg-white fixed shadow-md dark:bg-darkColor"
+      :class="{ '!translate-y-0': isWindowScrolled }"
+    />
+    <main class="flex-1 bg-white">
       <slot />
     </main>
     <preloader v-if="loading" />
@@ -30,9 +37,10 @@ const nuxtApp = useNuxtApp();
 const loading = ref(true);
 const promoPosition = ref('top');
 const isWindowScrolled = ref(false);
+const router = useRouter();
 
 const handleScroll = () => {
-  if (window.scrollY > 0) {
+  if (window.scrollY > 50) {
     isWindowScrolled.value = true;
   } else {
     isWindowScrolled.value = false;

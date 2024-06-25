@@ -1,17 +1,22 @@
 <template>
   <div>
     <header
-      class="main-header z-50 absolute w-full top-0 left-0 transition-all duration-300"
-      :class="{
-        'top-0': isWindowScrolled || props.promoPosition == 'bottom',
-        'top-[var(--promo-h)]':
-          !isWindowScrolled && props.promoPosition !== 'bottom',
-        'dark:bg-[var(--header-bg)]': isWindowScrolled,
-        'dark:bg-color1': !isWindowScrolled,
-      }"
+      class="main-header z-50 w-full top-0 left-0 transition-all ease-linear duration-300 delay-75"
+      :class="[
+        {
+          'top-0': isWindowScrolled || props.promoPosition == 'bottom',
+          'top-[var(--promo-h)]':
+            !isWindowScrolled && props.promoPosition !== 'bottom',
+          'dark:bg-color1 absolute': !isWindowScrolled,
+        },
+        props.class,
+      ]"
     >
       <div class="container">
-        <div class="h-[var(--header-h)] flex items-center relative">
+        <div
+          class="h-[var(--header-h)] flex items-center relative"
+          :class="{ 'h-[60px] md:h-[90px]': isWindowScrolled , 'md:h-[90px]': router.currentRoute.value.path !== '/' }" 
+        >
           <NuxtLink
             class="relative flex overflow-hidden transition-all main-logo"
             :to="localPath('/')"
@@ -20,19 +25,28 @@
           </NuxtLink>
 
           <nav class="hidden lg:block mx-auto">
-            <ul class="menu flex gap-8 xl:gap-12">
+            <ul
+              class="menu flex gap-8 xl:gap-12"
+              :class="
+                props.fixedHeader
+                  ? '*:text-black dark:*:text-white'
+                  : 'text-white'
+              "
+            >
               <li class="group relative">
                 <NuxtLink
-                class="text-lg transition-colors text-white font-semibold relative peer"
-                :to="localPath('/')"
-              >
-                {{ $t("header.home") }}
-              </NuxtLink>
-              <div class="ne-nav-divider peer-[.router-link-active]:scale-x-100"></div>              
+                  class="text-lg transition-colors font-semibold relative peer"
+                  :to="localPath('/')"
+                >
+                  {{ $t("header.home") }}
+                </NuxtLink>
+                <div
+                  class="ne-nav-divider peer-[.router-link-active]:scale-x-100"
+                ></div>
               </li>
               <li class="group relative">
                 <NuxtLink
-                  class="group text-lg font-semibold group-has-[.router-link-active]:text-primary transition-colors text-white"
+                  class="group text-lg font-semibold transition-color"
                   :to="localPath('/services')"
                   >{{ $t("header.services") }}
                 </NuxtLink>
@@ -40,12 +54,12 @@
               </li>
               <li class="group relative">
                 <NuxtLink
-                  class="text-lg font-semibold transition-colors text-white"
+                  class="text-lg font-semibold transition-colors"
                   to="/courses.html"
                   >{{ $t("header.company") }}
                   <!-- <Icon
                     name="material-symbols-light:keyboard-arrow-down"
-                    class="w-6 h-6 ltr:ml-[-5px] rtl:mr-[-5px] text-white group-hover:rotate-180 transition-all"
+                    class="w-6 h-6 ltr:ml-[-5px] rtl:mr-[-5px] group-hover:rotate-180 transition-all"
                   /> -->
                 </NuxtLink>
                 <!-- <SubMenu
@@ -56,7 +70,7 @@
               </li>
               <li class="group relative">
                 <NuxtLink
-                  class="text-lg font-semibold transition-colors text-white"
+                  class="text-lg font-semibold transition-colors"
                   to="/careers"
                 >
                   {{ $t("header.careers") }}
@@ -65,7 +79,7 @@
               </li>
               <li class="group relative">
                 <NuxtLink
-                  class="text-lg font-semibold transition-colors text-white"
+                  class="text-lg font-semibold transition-colors"
                   to="/trainee-services.html"
                   >{{ $t("header.contact") }}</NuxtLink
                 >
@@ -81,7 +95,7 @@
             <LoginBtn />
             <div
               @click="siteOptions.mobileSidebarOpen = true"
-              class="flex lg:hidden w-10 h-10 shadow active:shadow-none rounded-base items-center justify-center cursor-pointer ransition-all hover:scale-95 hover:bg-slate-100/50 dark:hover:bg-slate-100/10 "
+              class="flex lg:hidden w-10 h-10 shadow active:shadow-none rounded-base items-center justify-center cursor-pointer ransition-all hover:scale-95 hover:bg-slate-100/50 dark:hover:bg-slate-100/10"
             >
               <span>
                 <Icon
@@ -99,16 +113,18 @@
 </template>
 
 <script setup type="ts">
+const scrollVal = ref(null);
 const isWindowScrolled = ref(false);
 const localPath = useLocalePath();
 const siteOptions = useSiteOptions();
-const value = ref(null);
+const router = useRouter()
 
 const handleScroll = () => {
-  if (window.scrollY > 0) {
-    isWindowScrolled.value = true;
+  isWindowScrolled.value = true;
+  if (window.scrollY > 100) {
+    scrollVal.value = window.scrollY;
   } else {
-    isWindowScrolled.value = false;
+    scrollVal.value = window.scrollY;
   }
 };
 
@@ -117,6 +133,14 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  class: {
+    type: String,
+    default: "",
+  },
+  fixedHeader: {
+    type: Boolean,
+    default: false,
+  }
 })
 
 onMounted(() => {
