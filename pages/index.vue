@@ -115,7 +115,7 @@
                 </div>
                 <div class="flex flex-col">
                   <h5
-                    class="text-[10px] xs:text-[15px] text-gray-800 font-bold mb-1 border-b pb-1"
+                    class="text-[10px] xs:text-[15px] text-gray-800 font-bold mb-1 border-b pb-1 text-nowrap"
                   >
                     Happy Clients & Rating
                   </h5>
