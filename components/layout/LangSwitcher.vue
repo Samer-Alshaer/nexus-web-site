@@ -8,7 +8,7 @@
         @click="changeLang()"
         v-text="locale"
         :class="props.class"
-        class="rounded-base shadow bg-slate-100/10 items-center justify-center cursor-pointer text-[16px] text-gray-400 dark:text-white font-semibold transition-all hover:scale-95 active:shadow-none"
+        class="w-[40px] h-[40px] rounded-base shadow bg-slate-100/10 items-center justify-center cursor-pointer text-[16px] text-gray-400 dark:text-white font-semibold transition-all hover:scale-95 active:shadow-none"
       ></div>
     </div>
   </ClientOnly>

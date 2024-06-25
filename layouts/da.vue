@@ -18,7 +18,7 @@
       <slot />
     </main>
     <preloader v-if="loading" />
-    <WhatsappIcon />
+    <!-- <WhatsappIcon /> -->
     <SidebarMenu />
     <!-- <Footer /> -->
   </div>

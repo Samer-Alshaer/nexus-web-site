@@ -85,7 +85,7 @@ body {
 
   .ne-nav-divider {
     @apply before:absolute 
-      before:w-[30%] 
+      before:w-[15px] 
       before:h-[5px] 
       before:bottom-[-7px]
       before:left-0
@@ -98,15 +98,20 @@ body {
       origin-left
       duration-200
       after:absolute 
-      after:w-[65%] 
+      after:w-[calc(100%-15px)] 
       after:h-[5px] 
       after:bottom-[-7px] 
-      after:left-[40%] 
+      after:left-[20px] 
       after:bg-gradient-to-r 
       after:from-gradientColorFrom 
       after:to-gradientColorTo 
       after:rounded-[5px]
       group-hover:scale-x-100
-      transition-all;
+      rtl:after:w-[calc(100%-15px)] 
+      rtl:before:w-[15px] 
+      rtl:before:right-0
+      rtl:after:right-[20px]  
+      transition-all
+      rtl:origin-right;
   }
 }

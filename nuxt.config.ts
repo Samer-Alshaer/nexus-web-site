@@ -1,6 +1,7 @@
 import i18nOptions from "./utils/i18n/options";
 import primevueOptions from "./plugins/primevue/primevueOptions";
 import colorModeOptions from "./utils/color-mode/options";
+import aosOptions from "./utils/aos";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -11,9 +12,10 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/color-mode",
     "@nuxt/image",
-    "@nuxtjs/google-fonts"
+    "@nuxtjs/google-fonts",
+    "nuxt-aos",
   ],
-
+  plugins: [],
   runtimeConfig: {
     public: {
       SITE_NAME: process.env.SITE_NAME,
@@ -41,9 +43,10 @@ export default defineNuxtConfig({
   i18n: i18nOptions,
   primevue: primevueOptions,
   colorMode: colorModeOptions,
+  aos: aosOptions,
   googleFonts: {
     families: {
-    'Josefin+Sans': true,
+      "Josefin+Sans": true,
     },
   },
 });

@@ -1,4 +1,7 @@
 function mousecursor() {
+
+  if (window.innerWidth < 1024) return;
+
   const router = useRouter();
 
   if (process.client) {

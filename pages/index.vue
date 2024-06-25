@@ -1,29 +1,28 @@
 <template>
   <div>
     <section
-      class="bg-[#140C26] pt-[150px] pb-[180px] overflow-hidden bg-no-repeat bg-cover bg-[url('/media/images/hero-bg.jpg')] bg-[center_bottom_3rem]"
+      class="pt-[150px] pb-[318px] md:pb-[180px] overflow-hidden bg-no-repeat bg-cover bg-[url('/media/images/hero-bg.jpg')] bg-[center_bottom_3rem]"
     >
       <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div>
             <div
-              class="banner-img pxl-circle-svg relative right-[40px] rtl:right-[-40px] z-10"
+              class="banner-img pxl-circle-svg relative md:right-[40px] md:rtl:right-[-40px] z-10"
             >
               <nuxt-img
                 src="/media/images/hero-banner.png"
                 alt="hero-banner"
-                class="w-full object-cover max-w-[552px] mr-auto rtl:ml-auto rtl:mr-0"
+                class="object-cover mr-auto md:mr-auto md:rtl:ml-auto md:rtl:mr-0 3xl:w-[700px]"
                 loading="lazy"
+                width="552"
+                height="636"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 width="583"
                 height="605"
-                class="absolute inset-1/2 transform -translate-x-1/2 
-                -translate-y-1/2 max-w-[400px] lg:invisible 2xl:visible 
-                mx-auto md:max-w-[380px] lg:max-w-[700px] 
-                mt-[-30px] ml-[10px] rtl:ml-[60px] z-[-1] overflow-visible"
+                class="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full mx-auto mt-[-30px] ml-[10px] md:rtl:ml-[60px] z-[-1] overflow-visible 3xl:w-[800px] 3xl:h-[800px]"
                 viewBox="0 0 583 605"
               >
                 <defs>
@@ -88,11 +87,63 @@
                   r="11"
                 />
               </svg>
+              <div
+                class="flex bg-white px-6 py-5 rounded-full shadow-md min-w-[350px] lg:min-w-[420px] invisible xs:visible mx-auto gap-3 flex-nowrap absolute bottom-0 left-2/4 transform -translate-x-2/4 lg:justify-between"
+              >
+                <div class="flex items-center">
+                  <nuxt-img
+                    src="/media/images/users/user3.jpg"
+                    alt="user3"
+                    title="user3"
+                    class="w-[55px] rounded-full border-2 border-[#ededed]"
+                    loading="lazy"
+                  />
+                  <nuxt-img
+                    src="/media/images/users/user2.jpg"
+                    alt="user2"
+                    title="user2"
+                    class="w-[55px] rounded-full border-2 border-[#ededed] ml-[-25px] rtl:mr-[-25px] rtl:ml-0"
+                    loading="lazy"
+                  />
+                  <nuxt-img
+                    src="/media/images/users/user1.jpg"
+                    alt="user1"
+                    title="user1"
+                    class="w-[55px] rounded-full border-2 border-[#ededed] ml-[-25px] rtl:mr-[-25px] rtl:ml-0"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <h5
+                    class="text-[15px] text-gray-800 font-bold mb-1 border-b pb-1"
+                  >
+                    Happy Clients & Rating
+                  </h5>
+                  <div class="flex items-center gap-2">
+                    <Icon
+                      name="solar:stars-minimalistic-bold"
+                      class="w-5 h-5 text-[#fdc703]"
+                    />
+                    <span class="text-[15px] font-bold text-gray-800 mt-1"
+                      >4.8 ( 8,090 )</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="hidden lg:flex items-center justify-center w-[53px] h-[53px] rounded-full bg-gradient-to-r from-gradientColorFrom to-gradientColorTo"
+                >
+                  <Icon
+                    name="ph:check-circle-bold"
+                    class="w-6 h-6 text-white"
+                  ></Icon>
+                </div>
+              </div>
             </div>
           </div>
           <div class="mt-[47px]">
             <h1
               class="text-white font-bold leading-tight lg:text-7xl text-5xl mb-10"
+              data-aos="zoom-out-left"
             >
               Innovate Your Digital Presence
             </h1>
@@ -129,6 +180,14 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="pt-10">
+      <div class="container">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores
+        perspiciatis nesciunt excepturi sed sequi, magni error obcaecati sunt
+        vero odit, distinctio ratione iusto autem debitis, repellendus assumenda
+        nobis. Debitis?
       </div>
     </section>
   </div>

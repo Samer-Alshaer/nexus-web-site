@@ -19,8 +19,9 @@
 </style>
 
 <script setup>
-const locale = useI18n();
 import mousecursor from "@/utils/mousecursor";
+
+const locale = useI18n();
 
 useHead({
   htmlAttrs: {

@@ -5,7 +5,7 @@
   >
     <span>
       <Icon
-        name="material-symbols:person-rounded"
+        name="ic:round-person"
         class="w-[23px] h-[23px] dark:text-white text-gray-400 transition-all"
       />
     </span>

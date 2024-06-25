@@ -7,7 +7,7 @@ const colorModeOptions = {
   componentName: "ColorScheme",
   classPrefix: "",
   classSuffix: "",
-  storageKey: "da-theme-mode",
+  storageKey: "ne-theme-mode",
 };
 
 export default colorModeOptions;
