@@ -31,17 +31,17 @@ export default {
       "border-transparent",
       "border-solid",
       {
-        "border-y-[0.25rem] border-r-[0.25rem] border-l-0 border-r-slate-200 dark:border-r-color2":
+        "border-y-[0.25rem] border-r-[0.25rem] border-l-0 border-r-slate-200 dark:border-r-gray-800":
           context?.right ||
           (!context?.right &&
             !context?.left &&
             !context?.top &&
             !context?.bottom),
-        "border-y-[0.25rem] border-l-[0.25rem] border-r-0 border-l-slate-200 dark:border-l-color2":
+        "border-y-[0.25rem] border-l-[0.25rem] border-r-0 border-l-slate-200 dark:border-l-gray-800":
           context?.left,
-        "border-x-[0.25rem] border-t-[0.25rem] border-b-0 border-t-slate-200 dark:border-t-color2":
+        "border-x-[0.25rem] border-t-[0.25rem] border-b-0 border-t-slate-200 dark:border-t-gray-800":
           context?.top,
-        "border-x-[0.25rem] border-b-[0.25rem] border-t-0 border-b-slate-200 dark:border-b-color2":
+        "border-x-[0.25rem] border-b-[0.25rem] border-t-0 border-b-slate-200 dark:border-b-gray-800":
           context?.bottom,
       },
 
@@ -62,7 +62,7 @@ export default {
     class: [
       "p-2",
       "text-[10px]",
-      "bg-white dark:bg-color2 dark:text-white border dark:border-0 shadow-xl",
+      "bg-white dark:bg-gray-800 dark:text-white border dark:border-0 shadow-xl",
       "leading-none",
       "whitespace-pre-line",
       "break-words",

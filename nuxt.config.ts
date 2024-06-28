@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/google-fonts",
     "nuxt-aos",
+    "nuxt-swiper",
+    "nuxt-parallax"
   ],
   plugins: [{ src: "~/plugins/jquery", mode: "client" },],
   runtimeConfig: {

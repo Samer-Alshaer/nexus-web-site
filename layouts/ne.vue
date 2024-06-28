@@ -13,9 +13,10 @@
     <Header
       :promoPosition="promoPosition"
       class="translate-y-0 absolute"
-      :class="{ 'bg-darkColor': router.currentRoute.value.path !== '/' }"
+      :class="{ 'bg-darkColor': !isHome }"
     />
     <Header
+      v-if="isHome"
       :promoPosition="promoPosition"
       fixedHeader
       class="translate-y-[-110%] bg-white fixed shadow-md dark:bg-darkColor"
@@ -27,11 +28,13 @@
     <preloader v-if="loading" />
     <!-- <WhatsappIcon /> -->
     <SidebarMenu />
-    <!-- <Footer /> -->
+    <FooterSec />
   </div>
 </template>
 
 <script setup type="ts">
+import Footer from '~/components/layout/footer.vue';
+
 
 const nuxtApp = useNuxtApp();
 const loading = ref(true);
@@ -47,8 +50,13 @@ const handleScroll = () => {
   }
 };
 
+const isHome = computed(() => {
+  return router.currentRoute.value.path === '/' || router.currentRoute.value.path === '/ar';
+});
+
 nuxtApp.hook("page:finish", () => {
   loading.value = false;
+  $('body').css('overflow', 'auto');
 });
 
 onMounted(() => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-[150px]">
+  <div class="container py-24 sm:py-32">
     <div
       class="bg-white dark:bg-color3 rounded-base p-5 mx-auto max-w-[600px] min-h-[400px] border border-borderColor flex flex-col items-center justify-center gap-5"
     >
@@ -19,10 +19,7 @@
         {{ $t("page_not_found") }}
       </div>
 
-      <da-button
-        @click="router.back()"
-        class="min-w-[150px] capitalize"
-      >
+      <da-button @click="router.back()" class="min-w-[150px] capitalize">
         {{ $t("back") }}
       </da-button>
     </div>

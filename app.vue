@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="da">
+  <NuxtLayout name="ne">
     <NuxtPage />
     <div
       class="mouse-cursor cursor-outer w-8 h-8 border border-l-gradientColorFrom border-t-gradientColorFrom border-r-gradientColorTo border-b-gradientColorTo ml-[-14px] mt-[-14px]"

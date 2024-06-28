@@ -4,11 +4,12 @@
       <html :dir="locale === 'ar' ? 'rtl' : 'ltr'"></html>
 
       <div
+        role="button"
         v-tooltip.bottom="$t('switch_lang')"
         @click="changeLang()"
         v-text="locale"
         :class="props.class"
-        class="w-[40px] h-[40px] rounded-base shadow bg-slate-100/10 items-center justify-center cursor-pointer text-[16px] text-gray-400 dark:text-white font-semibold transition-all hover:scale-95 active:shadow-none"
+        class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-white dark:text-gray-20 hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center uppercase font-cursive"
       ></div>
     </div>
   </ClientOnly>

@@ -1,6 +1,21 @@
 @import url("./animation.css");
 /* Custom CSS */
 
+@font-face {
+  font-display: swap;
+  font-family: "SaudiSerif";
+  font-weight: 500;
+  src: url(../fonts/SaudiSerif-VF.woff2) format("woff2"),
+    url(../fonts/SaudiSerif-VF.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: SaudiSans;
+  src: url(../fonts/SaudiSans-VF.woff2) format("woff2"),
+    url(../fonts/SaudiSans-VF.ttf) format("truetype");
+}
+
 :root {
   --header-h: 120px;
   --promo-h: 0px;
@@ -11,9 +26,11 @@
   --body-bg-color: #fff;
   --border-color: #e5e7eb;
   --theme-gray: #9ca3af;
-  --dark-color: #0A1320;
+  --dark-color: #0a1320;
   --gradient-color-from: #ff9a3e;
   --gradient-color-to: #ff5266;
+  --font-saudi-serif: "SaudiSerif", serif;
+  --font-saudi-sans: "SaudiSans", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -26,16 +43,25 @@
   --primary: #ff5266;
   --secondary: #000000;
   --tertiary: #00f1f4;
-  --body-bg-color: #000;
+  --body-bg-color: #0a1320;
   --border-color: #333;
   --theme-gray: #f3f4f666;
-  --dark-color: #0A1320;
+  --dark-color: #0a1320;
   --gradient-color-from: #ff9a3e;
   --gradient-color-to: #ff5266;
 }
 
 body {
   background-color: var(--body-bg-color);
+  overflow: hidden;
+}
+
+html[dir="rtl"] body {
+  font-family: "SaudiSans", sans-serif;
+}
+
+.font-saudi-serif {
+  font-family: "SaudiSerif", serif;
 }
 
 ::-webkit-scrollbar {
@@ -79,12 +105,52 @@ body {
   height: 70px;
   background-color: var(--primary);
   opacity: 0.3;
-
 }
 .cursor-inner {
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .cursor-outer.cursor-hover {
   opacity: 0;
+}
+
+.font-cursive {
+  font-family: "Caveat", cursive;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 59px !important;
+  height: 65px !important;
+  border-radius: 20px;
+  background-color: #e7e7e7;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #382c4d;
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
+  left: -50px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-family: unset !important;
+  content: "" !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.custom-swiper-nav .swiper-button-prev,
+.custom-swiper-nav .swiper-button-next {
+  transform: translateY(-50%);
 }

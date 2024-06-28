@@ -71,11 +71,13 @@ body {
      before:duration-200;
   }
 
-  .btn-secondary,.btn-outline:hover {
+  .btn-secondary,
+  .btn-outline:hover {
     @apply before:w-[100%];
   }
 
-  .btn-secondary,.btn-outline:hover span {
+  .btn-secondary,
+  .btn-outline:hover span {
     @apply text-white;
   }
 
@@ -113,5 +115,13 @@ body {
       rtl:after:right-[20px]  
       transition-all
       rtl:origin-right;
+  }
+
+  .swiper-button-prev {
+    @apply lg:!left-[50px] hover:bg-gradient-to-r hover:from-gradientColorFrom hover:to-gradientColorTo !text-black hover:!text-white transition-all;
+  }
+
+  .swiper-button-next {
+    @apply lg:!right-[50px] hover:bg-gradient-to-r hover:from-gradientColorFrom hover:to-gradientColorTo  !text-black hover:!text-white transition-all;
   }
 }

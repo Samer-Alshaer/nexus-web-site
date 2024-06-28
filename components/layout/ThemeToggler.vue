@@ -1,6 +1,7 @@
 <template>
   <ClientOnly>
     <div
+      role="button"
       v-tooltip.bottom="
         $t('header.switch_theme', {
           theme: isDark ? $t('header.light') : $t('header.dark'),
@@ -8,18 +9,18 @@
       "
       @click="isDark = !isDark"
       ref="themeToggler"
-      class="group overflow-hidden flex w-10 h-10 rounded-base shadow bg-slate-100/10 items-center justify-center cursor-pointer transition-all hover:scale-95 active:shadow-none"
+      class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center overflow-hidden"
     >
       <Icon
         v-show="isDark"
         name="line-md:sunny-filled-loop-to-moon-alt-filled-loop-transition"
-        class="w-5 h-5 dark:text-white text-black transition-all duration-1000"
+        class="w-5 h-5 text-white transition-all duration-1000"
         :class="{ 'theme-mode-animation': themeTogglerActive }"
       />
       <Icon
         v-show="!isDark"
         name="line-md:sunny-filled-loop"
-        class="w-[20px] h-[20px] dark:text-white text-gray-400 transition-all duration-1000"
+        class="w-[20px] h-[20px] text-white transition-all duration-1000"
         :class="{ 'theme-mode-animation': themeTogglerActive }"
       />
     </div>

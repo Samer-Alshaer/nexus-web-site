@@ -8,6 +8,7 @@
           'top-[var(--promo-h)]':
             !isWindowScrolled && props.promoPosition !== 'bottom',
           'dark:bg-color1 absolute': !isWindowScrolled,
+          relative: !isHome,
         },
         props.class,
       ]"
@@ -15,7 +16,10 @@
       <div class="container">
         <div
           class="h-[var(--header-h)] flex items-center relative"
-          :class="{ 'h-[60px] md:h-[90px]': isWindowScrolled , 'md:h-[90px]': router.currentRoute.value.path !== '/' }" 
+          :class="{
+            'h-[60px] md:h-[90px]': isWindowScrolled,
+            'md:h-[90px]': isHome,
+          }"
         >
           <NuxtLink
             class="relative flex overflow-hidden transition-all main-logo"
@@ -55,7 +59,7 @@
               <li class="group relative">
                 <NuxtLink
                   class="text-lg font-semibold transition-colors"
-                  to="/courses.html"
+                  :to="localPath('/about-us')"
                   >{{ $t("header.company") }}
                   <!-- <Icon
                     name="material-symbols-light:keyboard-arrow-down"
@@ -71,7 +75,7 @@
               <li class="group relative">
                 <NuxtLink
                   class="text-lg font-semibold transition-colors"
-                  to="/careers"
+                  :to="localPath('/careers')"
                 >
                   {{ $t("header.careers") }}
                 </NuxtLink>
@@ -80,18 +84,21 @@
               <li class="group relative">
                 <NuxtLink
                   class="text-lg font-semibold transition-colors"
-                  to="/trainee-services.html"
-                  >{{ $t("header.contact") }}</NuxtLink
-                >
+                  :to="localPath('/contact')"
+                  >{{ $t("header.contact") }}
+                </NuxtLink>
                 <div class="ne-nav-divider"></div>
               </li>
             </ul>
           </nav>
 
           <div class="mx-auto lg:mx-0"></div>
-          <div class="flex items-center gap-[8px]">
+
+          <div
+            class="flex items-center justify-center lg:justify-end gap-x-1.5 group"
+          >
             <ThemeToggler />
-            <LangSwitcher class="w-10 h-10 hidden sm:flex" />
+            <LangSwitcher />
             <LoginBtn />
             <div
               @click="siteOptions.mobileSidebarOpen = true"
@@ -127,6 +134,10 @@ const handleScroll = () => {
     scrollVal.value = window.scrollY;
   }
 };
+
+const isHome = computed(() => {
+  return router.currentRoute.value.path === '/' || router.currentRoute.value.path === '/ar';
+});
 
 const props = defineProps({
   promoPosition: {
