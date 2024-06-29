@@ -186,7 +186,7 @@
           class="flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1"
         >
           <p class="text-gray-500 dark:text-gray-400 text-sm">
-            © 2022-<span v-text="new Date().getFullYear()"></span> Nexus
+            © <span v-text="new Date().getFullYear()"></span> Nexus
             Technology. All rights reserved.
           </p>
         </div>

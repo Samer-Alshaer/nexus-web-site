@@ -10,10 +10,10 @@
         :class="props.class"
         class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-white dark:text-gray-20 hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center uppercase"
       >
-        <span class="relative">
+        <span class="relative before:absolute before:right-[2px] before:bottom-[1px] before:w-[6px] before:h-[7px] before:bg-darkColor z-20">
           <Icon name="ph:globe-simple-x" class="w-5 h-5" />
           <span
-            class="absolute bg-darkColor h-[7px] bottom-0 right-[2px] flex items-center justify-center text-[9px] font-medium text-white"
+            class="absolute h-[7px] bottom-[-1px] rtl:bottom-0 right-[2px] flex items-center justify-center text-[9px] font-medium text-white"
           >
             {{ locale === "ar" ? "ع" : "E" }}
           </span>
