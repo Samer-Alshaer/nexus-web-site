@@ -10,7 +10,7 @@
               class="relative flex overflow-hidden transition-all main-logo"
               :to="localPath('/')"
             >
-              <logo class="h-[210px]" />
+              <logo class="h-[55px]" />
             </NuxtLink>
           </div>
           <div

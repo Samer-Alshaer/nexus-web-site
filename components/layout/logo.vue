@@ -1,12 +1,20 @@
 <template>
   <div>
     <nuxt-img
-      class="block"
+      class="block rtl:hidden"
       loading="lazy"
       alt="logo"
       :class="{ 'blur-sm': blurOn, [props.class]: props.class }"
       @load="blurOn = false"
-      src="/media/images/logos/logo.svg"
+      src="/media/images/logos/logo-en.svg"
+    />
+    <nuxt-img
+      class="hidden rtl:block"
+      loading="lazy"
+      alt="logo"
+      :class="{ 'blur-sm': blurOn, [props.class]: props.class }"
+      @load="blurOn = false"
+      src="/media/images/logos/logo-ar.svg"
     />
   </div>
 </template>
