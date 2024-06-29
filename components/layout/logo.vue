@@ -6,7 +6,7 @@
       alt="logo"
       :class="{ 'blur-sm': blurOn, [props.class]: props.class }"
       @load="blurOn = false"
-      src="/media/images/logos/logo.png"
+      src="/media/images/logos/logo.svg"
     />
   </div>
 </template>

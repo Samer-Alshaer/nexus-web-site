@@ -185,40 +185,28 @@
     </section>
     <section class="pb-24 sm:pb-32 relative">
       <div class="container">
-        <client-only>
-          <Swiper
-            class="relative"
-            :modules="[SwiperNavigation,SwiperA11y]"
-            :slides-per-view="auto"
-            :loop="true"
-            :breakpoints="swipeBreakPoints"
-            :navigation="true"
-            :allowSlideClick="true"
-             @slideChange="onSlideChange"
+        <Swiper
+          class="relative"
+          :modules="[SwiperNavigation, EffectMaterial]"
+          :loop="true"
+          :navigation="true"
+          :centeredSlides="true"
+          :slidesPerView="3"
+          :spaceBetween="30"
+          :effect="'material'"
+        >
+          <SwiperSlide
+            v-for="service in services"
+            :key="service.id"
+            class="p-[30px] lg:p-[60px] border-l-2 border-l-gray-100/60 transition ease-in-out duration-300 hover:border-l-0"
+            :class="{
+              'hover:scale-110': hoveredServiceId === service.id,
+              'blur-sm': hoveredServiceId && hoveredServiceId !== service.id,
+            }"
           >
-            <SwiperSlide
-              v-for="service in services"
-              :key="service.id"
-              class="p-[30px] lg:p-[60px] border-l-2 border-l-gray-100/60 transition ease-in-out duration-300 hover:border-l-0 hover:!scale-110 group"
-              :class="{
-                'hover:scale-110': hoveredServiceId === service.id,
-                'blur-sm': hoveredServiceId && hoveredServiceId !== service.id,
-              }"
-              @mouseenter="hoveredServiceId = service.id"
-              @mouseleave="hoveredServiceId = null"
+            <div
+              class="flex items-center justify-center mb-6 swiper-material-wrapper"
             >
-              <div class="flex items-center justify-center mb-6">
-                <span
-                  class="w-[108px] h-[108px] rounded-3xl flex items-center justify-center shadow-md"
-                  :style="`background: linear-gradient(to right, ${service.bgColorFrom},  ${service.bgColorTo})`"
-                >
-                  <Icon
-                    :name="service.icon"
-                    class="w-[60px] h-[60px] text-white transition ease-in-out duration-300 group-hover:animate-pulse"
-                  />
-                </span>
-              </div>
-
               <h3
                 class="text-2xl font-bold mb-3 text-center max-w-[200px] mx-auto"
               >
@@ -227,12 +215,12 @@
               <p class="text-gray-500 dark:text-gray-400 text-center text-lg">
                 {{ service.desc }}
               </p>
-            </SwiperSlide>
-            <div
-              class="absolute bottom-0 left-[-5px] bg-white w-2 h-full z-10"
-            ></div>
-          </Swiper>
-        </client-only>
+            </div>
+          </SwiperSlide>
+          <div
+            class="absolute bottom-0 left-[-5px] bg-white w-2 h-full z-10"
+          ></div>
+        </Swiper>
       </div>
       <div class="custom-swiper-nav"></div>
     </section>
@@ -240,32 +228,16 @@
 </template>
 
 <script setup>
-import initAnimation from "@/utils/heroSvgAnimation";
+import { ref, onMounted, nextTick } from "vue";
+import EffectMaterial from "~/assets/js/swiper/effect-material.esm.js";
 import services from "~/data/services.json";
+import initAnimation from "@/utils/heroSvgAnimation";
 
 const config = useRuntimeConfig();
 const i18n = useI18n();
 const { animateDots } = initAnimation();
 const localPath = useLocalePath();
 const hoveredServiceId = ref(null);
-const onSwiper = (swiper) => {
-      return swiper;
-    };
-    const onSlideChange = () => {};
-const swipeBreakPoints = {
-  320: {
-    slidesPerView: 1,
-    spaceBetween: 10,
-  },
-  640: {
-    slidesPerView: 2,
-    spaceBetween: 20,
-  },
-  1024: {
-    slidesPerView: 3,
-    spaceBetween: 30,
-  },
-};
 
 useSeoMeta({
   title: `${i18n.t(config.public.SITE_NAME)} |  ${i18n.t("header.home")}`,
@@ -300,6 +272,7 @@ onMounted(() => {
       animateDots(svg, dot1Id, dot2Id);
     }
   });
+
   nextTick(() => {
     $(".swiper-button-prev").html(
       '<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 12 12"><path fill="currentColor" d="M10.5 6a.5.5 0 0 0-.5-.5H3.207l2.647-2.646a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L3.207 6.5H10a.5.5 0 0 0 .5-.5"/></svg>'
