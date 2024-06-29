@@ -188,12 +188,13 @@
         <client-only>
           <Swiper
             class="relative"
-            :modules="[SwiperNavigation]"
+            :modules="[SwiperNavigation,SwiperA11y]"
             :slides-per-view="auto"
             :loop="true"
             :breakpoints="swipeBreakPoints"
             :navigation="true"
             :allowSlideClick="true"
+             @slideChange="onSlideChange"
           >
             <SwiperSlide
               v-for="service in services"
@@ -247,7 +248,10 @@ const i18n = useI18n();
 const { animateDots } = initAnimation();
 const localPath = useLocalePath();
 const hoveredServiceId = ref(null);
-
+const onSwiper = (swiper) => {
+      return swiper;
+    };
+    const onSlideChange = () => {};
 const swipeBreakPoints = {
   320: {
     slidesPerView: 1,
