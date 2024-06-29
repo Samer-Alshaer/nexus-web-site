@@ -193,6 +193,7 @@
             :loop="true"
             :breakpoints="swipeBreakPoints"
             :navigation="true"
+            :allowSlideClick="true"
           >
             <SwiperSlide
               v-for="service in services"
