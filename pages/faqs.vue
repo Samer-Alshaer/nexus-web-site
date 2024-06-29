@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLayout name="page-layout" pageTitle="faqs" headVisibility>
+    <!-- <NuxtLayout name="page-layout" pageTitle="faqs" headVisibility>
       <Accordion
         :activeIndex="0"
         expandIcon="pi pi-plus"
@@ -17,17 +17,17 @@
         </AccordionTab>
       </Accordion>
      
-    </NuxtLayout>
+    </NuxtLayout> -->
   </div>
 </template>
 
 <script setup>
-import tabsData from "~/data/faqs.json";
+// import tabsData from "~/data/faqs.json";
 
 const connfig = useRuntimeConfig();
 const i18n = useI18n();
 
-const sortedTabs = tabsData.sort((a, b) => a.sort - b.sort);
+// const sortedTabs = tabsData.sort((a, b) => a.sort - b.sort);
 
 useSeoMeta({
   title: `${i18n.t(connfig.public.SITE_NAME)} |  ${i18n.t("header.faqs")}`,
