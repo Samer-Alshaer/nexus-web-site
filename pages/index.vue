@@ -223,7 +223,7 @@
                     :placeholder="[50, 25, 75, 5]"
                     loading="lazy"
                     format="webp"
-                    
+                    provider="netlify"
                     :alt="service.title"
                   />
 
