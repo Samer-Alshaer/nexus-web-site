@@ -222,6 +222,8 @@
                     :src="service.image"
                     :placeholder="[50, 25, 75, 5]"
                     loading="lazy"
+                    format="webp"
+                    
                     :alt="service.title"
                   />
 

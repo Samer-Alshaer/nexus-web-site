@@ -51,4 +51,7 @@ export default defineNuxtConfig({
       "Josefin+Sans": true,
     },
   },
+  image: {
+    provider: 'netlify',
+  }
 });
