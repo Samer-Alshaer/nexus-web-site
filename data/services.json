@@ -2,42 +2,49 @@
           "id": "1",
           "title": "Upfront & Competitive Price",
           "desc": "Build relationships and share your company values with well-crafted content tailored",
-          "icon": "fluent:chart-multiple-16-regular",
-          "bgColorFrom":  "#ff9a3e",
-          "bgColorTo":  "#ff5266"
+          "image": "https://material-you-slider.uiinitiative.com/images/01.jpg"
      },
      {
           "id": "2",
           "title": "Upfront & Competitive Price",
           "desc": "Build relationships and share your company values with well-crafted content tailored",
-          "icon": "cil:graph",
-          "bgColorFrom":  "#85C335",
-          "bgColorTo":  "#DCF188"
-
+          "image": "https://material-you-slider.uiinitiative.com/images/02.jpg"
      },
      {
           "id": "3",
           "title": "Upfront & Competitive Price",
           "desc": "Build relationships and share your company values with well-crafted content tailored",
-          "icon": "icon-park-solid:bubble-chart",
-          "bgColorFrom":  "#00F0FF",
-          "bgColorTo":  "#004EFF"
+          "image": "https://material-you-slider.uiinitiative.com/images/03.jpg"
      },
      {
           "id": "4",
           "title": "Upfront & Competitive Price",
           "desc": "Build relationships and share your company values with well-crafted content tailored",
-          "icon": "cil:chart-pie",
-          "bgColorFrom":  "#ff9a3e",
-          "bgColorTo":  "#ff5266"
+          "image": "https://material-you-slider.uiinitiative.com/images/04.jpg"
 
      },
      {
           "id": "5",
           "title": "Upfront & Competitive Price",
           "desc": "Build relationships and share your company values with well-crafted content tailored",
-          "icon": "cil:chart-pie",
-          "bgColorFrom":  "#00F0FF",
-          "bgColorTo":  "#004EFF"
+          "image": "https://material-you-slider.uiinitiative.com/images/05.jpg"
+     },
+     {
+          "id": "6",
+          "title": "Upfront & Competitive Price",
+          "desc": "Build relationships and share your company values with well-crafted content tailored",
+          "image": "https://material-you-slider.uiinitiative.com/images/06.jpg"
+     },
+     {
+          "id": "7",
+          "title": "Upfront & Competitive Price",
+          "desc": "Build relationships and share your company values with well-crafted content tailored",
+          "image": "https://material-you-slider.uiinitiative.com/images/07.jpg"
+     },
+     {
+          "id": "8",
+          "title": "Upfront & Competitive Price",
+          "desc": "Build relationships and share your company values with well-crafted content tailored",
+          "image": "https://material-you-slider.uiinitiative.com/images/08.jpg"
      }
 ]
